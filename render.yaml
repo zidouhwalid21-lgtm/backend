@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: laravel-api
+    env: docker
+    region: frankfurt
+    plan: free
+    dockerfilePath: dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql  # Changed to PostgreSQL
+      - key: DB_HOST
+        value: db.mjaxuochrhjcbdbncyiq.supabase.co  # Your actual Supabase host
+      - key: DB_PORT
+        value: 5432  # PostgreSQL port
+      - key: DB_DATABASE
+        value: postgres  # Usually 'postgres' for Supabase
+      - key: DB_USERNAME
+        value: postgres  # Your actual Supabase username
+      - key: DB_PASSWORD
+        value: 21435888112J@vajee  # Your actual Supabase password
